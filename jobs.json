@@ -4,5 +4,23 @@
         "description": "develop software to meet those needs",
         "priority": "low",
         "job_id": "6c6db7201c53448eb508c2a8a3c9f653"
+    },
+    {
+        "title": "Devops",
+        "description": "a combination of software development(dev) and operations(ops)",
+        "priority": "low",
+        "job_id": "a562af887c4d4284a024e0094f3830f8"
+    },
+    {
+        "title": "MLops",
+        "description": "process of managing the machine learning life cycle, from development to deployment and monitoring",
+        "priority": "low",
+        "job_id": "104f41fe67ed4a03a615212ed84faf1f"
+    },
+    {
+        "title": "Data scientist",
+        "description": "A data scientist is responsible for mining big data to extract valuable information",
+        "priority": "low",
+        "job_id": "d7e5f3d5b16d4283b6dedee807cc7d30"
     }
 ]
