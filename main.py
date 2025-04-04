@@ -5,57 +5,79 @@ from pydantic import BaseModel
 from typing import Optional, Literal
 from uuid import uuid4
 from fastapi.encoders import jsonable_encoder
+from celery_worker import celery_app, process_job
+from dotenv import load_dotenv 
+from threading import Lock
+from kafka_producer import send_event
+
+load_dotenv()
 
 app = FastAPI()
+file_lock=Lock()
 
-# Job model
+# Job Model
 class Job(BaseModel):
     title: str
     description: str
     priority: Literal["low", "medium", "high"]
-    job_id: Optional[str] = uuid4().hex  # UUID will be assigned automatically
+    job_id: Optional[str] = None
 
-JOBS_FILE = "jobs.json"
+JOBS_FILE = os.getenv("JOBS_FILE", "jobs.json")
 JOB_DATABASE = []
-
 
 if os.path.exists(JOBS_FILE):
     with open(JOBS_FILE, "r") as f:
-        JOB_DATABASE = json.load(f)
+        try:
+            JOB_DATABASE = json.load(f)
+        except json.JSONDecodeError:
+            JOB_DATABASE=[]    
 
-#/home
 @app.get("/")
 async def home():
     return {"Message": "Welcome to the Job Submission API"}
 
-#/list-jobs
 @app.get("/list-jobs")
 async def list_jobs():
     return {"jobs": JOB_DATABASE}
 
-#/job-by-index
-@app.get("/job-by-index/{index}")
-async def job_by_index(index: int):
-    if not JOB_DATABASE:
-        raise HTTPException(404, "No jobs available")
-    if index < 0 or index >= len(JOB_DATABASE):
-        raise HTTPException(404, f"Index {index} is out of range. Total jobs: {len(JOB_DATABASE)}")
-    return {"job": JOB_DATABASE[index]}
-
-#/submit-job
 @app.post("/submit-job")
 async def submit_job(job: Job):
     job.job_id = uuid4().hex  
-    json_job = jsonable_encoder(job)  
-    JOB_DATABASE.append(json_job)
-    with open(JOBS_FILE, "w") as f:
-        json.dump(JOB_DATABASE, f, indent=4)
-    return {"Message": f"Job '{job.title}' was submitted.", "job_id": job.job_id}
+    json_job = jsonable_encoder(job)
 
-#/get-job
-@app.get("/get-job/{job_id}")
-async def get_job(job_id: str):
-    for job in JOB_DATABASE:
-        if job["job_id"] == job_id: 
-            return job
-    raise HTTPException(404, f"Job not found: {job_id}")
+    try:
+        # Send job to Celery queue
+        task = celery_app.send_task("celery_worker.process_job", args=[json_job])
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Failed to submit job to the queue.")
+
+    with file_lock:
+        JOB_DATABASE.append(json_job)
+        with open(JOBS_FILE, "w") as f:
+            json.dump(JOB_DATABASE, f, indent=4)
+
+ #senf kafka event
+ 
+    send_event("job-events", {
+        "event": "job_submitted",
+        "job_id": job.job_id,
+        "title": job.title,
+        "status": "submitted"
+    })        
+
+    return {
+        "Message": f"Job '{job.title}' was submitted.",
+        "job_id": job.job_id,
+        "task_id": task.id
+    }
+
+
+@app.get("/get-task-status/{task_id}")
+async def get_task_status(task_id: str):
+    task_result = celery_app.AsyncResult(task_id)
+
+    return {
+    "task_id": task_id,
+    "status": task_result.status,
+    "result": task_result.result}

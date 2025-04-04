@@ -22,5 +22,209 @@
         "description": "A data scientist is responsible for mining big data to extract valuable information",
         "priority": "low",
         "job_id": "d7e5f3d5b16d4283b6dedee807cc7d30"
+    },
+    {
+        "title": "ML",
+        "description": "Ml developer",
+        "priority": "low",
+        "job_id": "e04f2be7bb9f410e944f58f811a7990d"
+    },
+    {
+        "title": "ML",
+        "description": "ML developer",
+        "priority": "low",
+        "job_id": "6ba7ab810d2c4044ba265874b61cb59d"
+    },
+    {
+        "title": "IT",
+        "description": "it engineer",
+        "priority": "low",
+        "job_id": "b3a485009fa6453e9992e308879fa735"
+    },
+    {
+        "title": "IT",
+        "description": "it engineer",
+        "priority": "low",
+        "job_id": "56429469897140a1ab683c59b9d55486"
+    },
+    {
+        "title": "IT",
+        "description": "it engineer",
+        "priority": "low",
+        "job_id": "46610d8a70ed4818b353361d0c3cfc64"
+    },
+    {
+        "title": "ML",
+        "description": "ml developer in python",
+        "priority": "low",
+        "job_id": "c8eb7fc29a7b4d73bd1051d450324dcd"
+    },
+    {
+        "title": "mlops",
+        "description": "mlops developer",
+        "priority": "low",
+        "job_id": "d2bbc4a22deb42dd9a23c54ad6908509"
+    },
+    {
+        "title": "mlops",
+        "description": "mlops developer",
+        "priority": "low",
+        "job_id": "a765b90a4b2d482f98202b0502415c86"
+    },
+    {
+        "title": "Test Job",
+        "description": "Testing Celery",
+        "priority": "medium",
+        "job_id": "1bf36cd0fa9845faa0d860944466f4b3"
+    },
+    {
+        "title": "mlops",
+        "description": "mlops developer",
+        "priority": "low",
+        "job_id": "17501c3832ec487197dfbe8f0e2b5f3a"
+    },
+    {
+        "title": "Train Model",
+        "description": "Training on Dataset X",
+        "priority": "low",
+        "job_id": "23ac4dd79a9c4230b389877a106f799e"
+    },
+    {
+        "title": "Train Model",
+        "description": "Training on Dataset X",
+        "priority": "low",
+        "job_id": "25f90b32e53d436eb5d26a681635e6b4"
+    },
+    {
+        "title": "Test Job",
+        "description": "Training ML Model",
+        "priority": "high",
+        "job_id": "2eb1078f5091426a9677da443c1d97fe"
+    },
+    {
+        "title": "Test Job",
+        "description": "Training ML Model",
+        "priority": "high",
+        "job_id": "35b3fef7ea3048489d39e3a1003f81cd"
+    },
+    {
+        "title": "Test Job",
+        "description": "Training ML Model",
+        "priority": "high",
+        "job_id": "11748fbf1e6b4080af47c5cdcac6b5c1"
+    },
+    {
+        "title": "Test Job",
+        "description": "Training ML Model",
+        "priority": "high",
+        "job_id": "05469d0d3900473eb16ac50378374c69"
+    },
+    {
+        "title": "Test Job",
+        "description": "Training ML Model",
+        "priority": "high",
+        "job_id": "36b5daf929d24390beb65f885217f1e0"
+    },
+    {
+        "title": "mlops",
+        "description": "ml opertion",
+        "priority": "low",
+        "job_id": "7fe1eb9bef294052bdf75c7f99657e18"
+    },
+    {
+        "title": "mlops",
+        "description": "ml develope",
+        "priority": "low",
+        "job_id": "b4c4988a2df54f12aff505f5101ccaef"
+    },
+    {
+        "title": "devops",
+        "description": "inten",
+        "priority": "low",
+        "job_id": "49e0e69c15d84f45b81d7aaf6fff6add"
+    },
+    {
+        "title": "devops",
+        "description": "inten",
+        "priority": "low",
+        "job_id": "6ab75c3973ae410291caa6551cbb52f7"
+    },
+    {
+        "title": "ml",
+        "description": "developer",
+        "priority": "low",
+        "job_id": "a64aaf3185bc475580b44569ba8e92cf"
+    },
+    {
+        "title": "ml",
+        "description": "developer",
+        "priority": "low",
+        "job_id": "e2354432a092435cae3240d5e80d685b"
+    },
+    {
+        "title": "ml",
+        "description": "developer",
+        "priority": "low",
+        "job_id": "f981445f44d9441f933dfeee4b036449"
+    },
+    {
+        "title": "ml",
+        "description": "developer",
+        "priority": "low",
+        "job_id": "d45f3037ab6a4de5937b001c28f82998"
+    },
+    {
+        "title": "Devops",
+        "description": "developer",
+        "priority": "low",
+        "job_id": "9946e24bcc184ab4b76b15e975662507"
+    },
+    {
+        "title": "deep learning",
+        "description": "developer",
+        "priority": "high",
+        "job_id": "e2ad8e8b4072424c84e55c09c4f42195"
+    },
+    {
+        "title": "AI",
+        "description": "AI developer",
+        "priority": "high",
+        "job_id": "ea6af616d624480883f0bd1b6ea42e1a"
+    },
+    {
+        "title": "AI",
+        "description": "AI developer",
+        "priority": "high",
+        "job_id": "1d57477b6d1b4a41a152d3d00e4521e3"
+    },
+    {
+        "title": "cyber security",
+        "description": "Cybersecurity roles might be worth considering if you have experience in information technology (IT)",
+        "priority": "high",
+        "job_id": "fe181d70da0a4b889bc11c8d24307694"
+    },
+    {
+        "title": "MLops",
+        "description": "MLops developer",
+        "priority": "high",
+        "job_id": "874c1961c247474b99bcfb7147cc21f3"
+    },
+    {
+        "title": "data scientist",
+        "description": "Begin initial data investigation and exploratory data analysis",
+        "priority": "high",
+        "job_id": "822db6935f4c4977b501849fb523270b"
+    },
+    {
+        "title": "data analyst",
+        "description": "collect, analyze, and interpret data to help companies make informed decisions",
+        "priority": "high",
+        "job_id": "9e453a1ecd724966be164661a2206ee7"
+    },
+    {
+        "title": "MLops",
+        "description": "Developer",
+        "priority": "high",
+        "job_id": "a7c9ac4cf05747899469cb261bb1533f"
     }
 ]
